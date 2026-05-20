@@ -19,7 +19,7 @@ export function LeftSidebar({ profile, newSinceLastVisit = 0 }: LeftSidebarProps
   const isActive = (path: string) => pathname === path
 
   return (
-    <aside className="hidden lg:flex flex-col overflow-y-auto py-4 px-3" style={{ background: 'var(--bg)', borderRight: '1px solid var(--border)', width: 252 }}>
+    <aside className="flex flex-col h-full py-4 px-3">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-0 px-2.5 pb-1.5 text-xl font-extrabold tracking-tight no-underline">
         <span style={{ color: 'var(--green)' }}>played</span>

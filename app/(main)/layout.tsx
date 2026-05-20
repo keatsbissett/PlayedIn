@@ -29,28 +29,30 @@ export default async function MainLayout({ children }: { children: React.ReactNo
   }
 
   return (
-    <div className="h-screen flex flex-col">
-      {/* Mobile header */}
-      <MobileNav />
+    <div className="app-shell">
+      <div className="mobile-nav">
+        <MobileNav />
+      </div>
 
-      <div className="flex flex-1 min-h-0">
-        {/* Left sidebar — desktop only */}
+      <div className="sidebar-l">
         <LeftSidebar profile={profile} newSinceLastVisit={newSinceLastVisit} />
+      </div>
 
-        {/* Center content */}
-        <main className="flex-1 overflow-y-auto px-4 py-4 lg:px-5 lg:py-4" style={{ maxWidth: 1080 }}>
-          {children}
-        </main>
+      <main className="main-center">
+        {children}
+      </main>
 
-        {/* Right sidebar — xl only */}
+      <div className="sidebar-r">
         <RightSidebar />
       </div>
 
-      {/* Mobile bottom tabbar */}
-      <MobileTabbar />
+      <div className="mobile-tabbar">
+        <MobileTabbar />
+      </div>
 
-      {/* Chat bar — always visible */}
-      <ChatBar />
+      <div className="chat-bar-wrap">
+        <ChatBar />
+      </div>
     </div>
   )
 }

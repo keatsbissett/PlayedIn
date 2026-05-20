@@ -18,18 +18,17 @@ export async function StatsStrip() {
   ]
 
   return (
-    <div className="card flex items-center px-5 py-3 mb-4">
+    <div className="card flex items-stretch mb-4" style={{ padding: 0 }}>
       {stats.map((s, i) => (
-        <div key={s.label} className="flex items-center">
-          {i > 0 && <div className="w-px h-8 mx-4" style={{ background: 'var(--border)' }} />}
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-xl font-bold font-mono" style={{ color: s.color }}>{s.value}</span>
+        <div key={s.label} className="flex-1 flex items-center" style={{ borderRight: i < stats.length - 1 ? '1px solid var(--border)' : 'none' }}>
+          <div className="px-5 py-3">
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-[20px] font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color: s.color }}>{s.value}</span>
               {s.trend && (
-                <span className="text-[10px] font-mono font-medium" style={{ color: 'var(--green)' }}>{s.trend}</span>
+                <span className="text-[10px] font-medium" style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--green)' }}>{s.trend}</span>
               )}
             </div>
-            <div className="text-[11px] font-medium uppercase tracking-widest" style={{ color: 'var(--text-3)' }}>{s.label}</div>
+            <div className="text-[11px] font-medium uppercase" style={{ color: 'var(--text-3)', letterSpacing: '0.06em' }}>{s.label}</div>
           </div>
         </div>
       ))}

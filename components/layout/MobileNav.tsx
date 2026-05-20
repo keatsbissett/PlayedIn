@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function MobileNav() {
   return (
-    <header className="flex lg:hidden items-center justify-between px-3.5 h-[52px]" style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
+    <header className="flex items-center justify-between px-3.5 h-full w-full" style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
       <Link href="/" className="flex items-center text-lg font-extrabold tracking-tight no-underline">
         <span style={{ color: 'var(--green)' }}>played</span>
         <span style={{ color: 'var(--text)' }}>in</span>

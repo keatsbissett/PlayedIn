@@ -42,9 +42,9 @@ export async function ShortcutCards({ activeSport, lastVisitedAt, userProvince }
         .from('clubs')
         .select('name')
         .eq('is_verified', true)
-        .eq('province', userProvince)
+        .ilike('province', `%${userProvince.split(',')[0]?.trim()}%`)
         .limit(1)
-        .single()
+        .maybeSingle()
       if (club) clubSubtext = `${club.name} — courts available`
     }
   } catch {
@@ -52,23 +52,24 @@ export async function ShortcutCards({ activeSport, lastVisitedAt, userProvince }
   }
 
   const cards = [
-    { label: 'Community chat', sub: chatSubtext, href: '/', icon: '💬' },
-    { label: 'Buy & Sell', sub: marketSubtext, href: '/marketplace', icon: '🏷️' },
-    { label: 'Find a club', sub: clubSubtext, href: '/clubs', icon: '📍' },
-    { label: 'Coaches', sub: coachSubtext, href: '#', icon: '🎓' },
+    { label: 'Community chat', sub: chatSubtext, href: '/', color: 'var(--green)', icon: '💬' },
+    { label: 'Buy & Sell', sub: marketSubtext, href: '/marketplace', color: 'var(--orange)', icon: '🏷️' },
+    { label: 'Find a club', sub: clubSubtext, href: '/clubs', color: 'var(--gold)', icon: '📍' },
+    { label: 'Coaches', sub: coachSubtext, href: '#', color: 'var(--teal)', icon: '🎓' },
   ]
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 mb-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4">
       {cards.map(c => (
         <Link
           key={c.label}
           href={c.href}
-          className="card px-3.5 py-3 no-underline transition-all hover:border-border-2"
+          className="card px-3.5 py-3 no-underline transition-all hover:border-border-2 relative overflow-hidden"
         >
-          <div className="text-lg mb-1">{c.icon}</div>
-          <div className="text-xs font-semibold mb-0.5" style={{ color: 'var(--text)' }}>{c.label}</div>
-          <div className="text-[10.5px]" style={{ color: 'var(--text-3)' }}>{c.sub}</div>
+          <div className="absolute top-0 left-0 w-full h-[2px]" style={{ background: c.color }} />
+          <div className="text-base mb-1.5">{c.icon}</div>
+          <div className="text-[12.5px] font-semibold mb-0.5" style={{ color: 'var(--text)' }}>{c.label}</div>
+          <div className="text-[10.5px] leading-snug" style={{ color: 'var(--text-3)' }}>{c.sub}</div>
         </Link>
       ))}
     </div>

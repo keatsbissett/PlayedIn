@@ -15,7 +15,7 @@ export function MobileTabbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="flex lg:hidden items-center justify-around py-1" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)' }}>
+    <nav className="flex items-center justify-around py-1 w-full h-full" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)' }}>
       {TABS.map(tab => {
         const active = tab.href === '/' ? pathname === '/' : pathname.startsWith(tab.href)
         return (
