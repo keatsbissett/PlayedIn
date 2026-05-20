@@ -16,7 +16,7 @@ export async function MarketplacePreviewStrip() {
     .limit(3)
 
   return (
-    <div className="card px-4 py-3 mb-4">
+    <div className="card px-4 py-3 mb-3">
       <div className="flex items-center justify-between mb-2.5">
         <span className="text-[13px] font-semibold" style={{ color: 'var(--text)' }}>
           🔥 Hot right now in Buy &amp; Sell

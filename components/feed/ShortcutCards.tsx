@@ -59,15 +59,15 @@ export async function ShortcutCards({ activeSport, lastVisitedAt, userProvince }
   ]
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-3">
       {cards.map(c => (
         <Link
           key={c.label}
           href={c.href}
-          className="card px-3.5 py-3 no-underline transition-all hover:border-border-2 relative overflow-hidden"
+          className="card px-3.5 py-2.5 no-underline transition-all hover:border-border-2 relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-[2px]" style={{ background: c.color }} />
-          <div className="text-base mb-1.5">{c.icon}</div>
+          <div className="text-sm mb-1">{c.icon}</div>
           <div className="text-[12.5px] font-semibold mb-0.5" style={{ color: 'var(--text)' }}>{c.label}</div>
           <div className="text-[10.5px] leading-snug" style={{ color: 'var(--text-3)' }}>{c.sub}</div>
         </Link>

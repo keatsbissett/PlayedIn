@@ -4,6 +4,7 @@ import { RightSidebar } from '@/components/layout/RightSidebar'
 import { ChatBar } from '@/components/layout/ChatBar'
 import { MobileNav } from '@/components/layout/MobileNav'
 import { MobileTabbar } from '@/components/layout/MobileTabbar'
+import { TopBanner } from '@/components/layout/TopBanner'
 import { updateLastVisited } from '@/lib/actions'
 
 export default async function MainLayout({ children }: { children: React.ReactNode }) {
@@ -30,22 +31,30 @@ export default async function MainLayout({ children }: { children: React.ReactNo
 
   return (
     <div className="app-shell">
+      {/* Top banner with logo — hidden on mobile */}
+      <TopBanner />
+
+      {/* Mobile header — hidden on desktop */}
       <div className="mobile-nav">
         <MobileNav />
       </div>
 
-      <div className="sidebar-l">
-        <LeftSidebar profile={profile} newSinceLastVisit={newSinceLastVisit} />
+      {/* Centered 3-column grid */}
+      <div className="shell-body">
+        <div className="sidebar-l">
+          <LeftSidebar profile={profile} newSinceLastVisit={newSinceLastVisit} />
+        </div>
+
+        <main className="main-center">
+          {children}
+        </main>
+
+        <div className="sidebar-r">
+          <RightSidebar />
+        </div>
       </div>
 
-      <main className="main-center">
-        {children}
-      </main>
-
-      <div className="sidebar-r">
-        <RightSidebar />
-      </div>
-
+      {/* Mobile tabbar — hidden on desktop */}
       <div className="mobile-tabbar">
         <MobileTabbar />
       </div>

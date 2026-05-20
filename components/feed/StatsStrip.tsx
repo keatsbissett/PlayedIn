@@ -18,17 +18,17 @@ export async function StatsStrip() {
   ]
 
   return (
-    <div className="card flex items-stretch mb-4" style={{ padding: 0 }}>
+    <div className="card flex items-stretch mb-3" style={{ padding: 0 }}>
       {stats.map((s, i) => (
         <div key={s.label} className="flex-1 flex items-center" style={{ borderRight: i < stats.length - 1 ? '1px solid var(--border)' : 'none' }}>
-          <div className="px-5 py-3">
+          <div className="px-4 py-2.5">
             <div className="flex items-baseline gap-1.5">
-              <span className="text-[20px] font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color: s.color }}>{s.value}</span>
+              <span className="text-[18px] font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color: s.color }}>{s.value}</span>
               {s.trend && (
                 <span className="text-[10px] font-medium" style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--green)' }}>{s.trend}</span>
               )}
             </div>
-            <div className="text-[11px] font-medium uppercase" style={{ color: 'var(--text-3)', letterSpacing: '0.06em' }}>{s.label}</div>
+            <div className="text-[10.5px] font-medium uppercase" style={{ color: 'var(--text-3)', letterSpacing: '0.06em' }}>{s.label}</div>
           </div>
         </div>
       ))}

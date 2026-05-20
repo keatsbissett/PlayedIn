@@ -31,20 +31,20 @@ export async function GreetingBar({ displayName, activeSport }: GreetingBarProps
   }
 
   return (
-    <div className="flex items-start justify-between mb-4">
+    <div className="flex items-start justify-between mb-3">
       <div>
-        <div className="flex items-center gap-2 mb-1">
+        <div className="flex items-center gap-2 mb-0.5">
           <LiveDot size={8} />
-          <span className="text-[15px] font-bold font-mono" style={{ color: 'var(--green)' }}>
-            LIVE NOW — 0 members active across SA
+          <span className="text-[13px] font-bold font-mono" style={{ color: 'var(--green)' }}>
+            LIVE — 0 members active across SA
           </span>
         </div>
-        <h1 className="text-[22px] font-semibold" style={{ color: 'var(--text)' }}>
+        <h1 className="text-[20px] font-semibold leading-tight" style={{ color: 'var(--text)' }}>
           Good {greetingTime()}, {displayName.split(' ')[0]}
         </h1>
         <p className="text-[13px] mt-0.5" style={{ color: 'var(--text-2)' }}>{subtitle}</p>
       </div>
-      <button className="btn-primary flex-shrink-0 mt-1">Invite a mate</button>
+      <button className="btn-primary flex-shrink-0">Invite a mate</button>
     </div>
   )
 }

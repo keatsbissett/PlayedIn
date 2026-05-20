@@ -25,7 +25,7 @@ export function FeedFilterBar() {
   }
 
   return (
-    <div className="flex items-center gap-1 mb-3">
+    <div className="flex items-center gap-1.5 mb-3">
       {FILTERS.map(f => (
         <button
           key={f.id}

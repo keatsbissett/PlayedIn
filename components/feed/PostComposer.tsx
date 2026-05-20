@@ -48,10 +48,10 @@ export function PostComposer({ userId, displayName, avatarUrl, activeSport }: Po
   if (!expanded) {
     return (
       <div
-        className="card px-4 py-3 mb-4 flex items-center gap-3 cursor-text"
+        className="card px-4 py-3 mb-3 flex items-center gap-3 cursor-text"
         onClick={() => setExpanded(true)}
       >
-        <Avatar name={displayName} url={avatarUrl} size={34} />
+        <Avatar name={displayName} url={avatarUrl} size={32} />
         <span className="flex-1 text-[13.5px]" style={{ color: 'var(--text-3)' }}>
           {sportPlaceholder(activeSport)}
         </span>
@@ -60,9 +60,9 @@ export function PostComposer({ userId, displayName, avatarUrl, activeSport }: Po
   }
 
   return (
-    <div className="card px-4 py-4 mb-4">
+    <div className="card px-4 py-3.5 mb-3">
       <div className="flex items-start gap-3 mb-3">
-        <Avatar name={displayName} url={avatarUrl} size={34} />
+        <Avatar name={displayName} url={avatarUrl} size={32} />
         <div className="flex-1">
           <input
             className="input-base mb-2"

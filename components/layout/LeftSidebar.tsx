@@ -19,16 +19,16 @@ export function LeftSidebar({ profile, newSinceLastVisit = 0 }: LeftSidebarProps
   const isActive = (path: string) => pathname === path
 
   return (
-    <aside className="flex flex-col h-full py-4 px-3">
+    <aside className="flex flex-col h-full py-3.5 px-3">
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-0 px-2.5 pb-1.5 text-xl font-extrabold tracking-tight no-underline">
+      <Link href="/" className="flex items-center gap-0 px-2 pb-1.5 text-xl font-extrabold tracking-tight no-underline">
         <span style={{ color: 'var(--green)' }}>played</span>
         <span style={{ color: 'var(--text)' }}>in</span>
         <span style={{ color: 'var(--green)' }}>.</span>
       </Link>
 
       {/* Search */}
-      <div className="relative mx-1.5 mt-2.5 mb-3.5">
+      <div className="relative mx-1 mt-2 mb-3">
         <svg className="absolute left-2.5 top-2" style={{ width: 15, height: 15, color: 'var(--text-3)' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
         </svg>
@@ -104,7 +104,7 @@ export function LeftSidebar({ profile, newSinceLastVisit = 0 }: LeftSidebarProps
       </nav>
 
       {/* Personal */}
-      <div className="section-label mt-4">Personal</div>
+      <div className="section-label mt-3">Personal</div>
       <nav className="flex flex-col gap-0.5">
         <Link href="/profile" className={`nav-item ${isActive('/profile') ? 'active' : ''}`}>
           <svg className="flex-shrink-0" style={{ width: 18, height: 18, color: 'var(--text-3)' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

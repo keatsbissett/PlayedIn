@@ -19,7 +19,7 @@ export function SportTabs() {
   }
 
   return (
-    <div className="flex items-center gap-1.5 mb-4 overflow-x-auto pb-1">
+    <div className="flex items-center gap-1.5 mb-3 overflow-x-auto pb-0.5">
       <button
         className={`tab-pill ${!activeSport ? 'active' : ''}`}
         onClick={() => handleClick(null)}
